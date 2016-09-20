@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block nav %}
+	<li><a href="/home">Home</a></li>
+	<li><a class="active" href="/progresstracker">Progress Tracker</a></li>
+    <li><a href="/blogtopics">Blog Topics</a></li>
+    <li><a href="/resources">Resources</a></li>
+{% endblock %}
+
+
+{% block content %}
+   <div id="content">
+     	<div class="padding">
+        <p style="padding-top: 75px"></p>
+        <a class="btn btn-default" href="{% url 'post_edit' slug=ptpost.slug %}">
+        <span class="glyphicon glyphicon-pencil"></span></a>
+        <h3>{{ ptpost.title }}</h3>
+        {{ ptpost.published_date }}
+        <p>{{ ptpost.body|linebreaksbr }}</p>
+    </div>
+{% endblock %}

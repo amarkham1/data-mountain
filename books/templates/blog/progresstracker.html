@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block nav %}
+	<li><a href="/home">Home</a></li>
+	<li><a class="active" href="/progresstracker">Progress Tracker</a></li>
+	<li class="dropdown">
+        <a href="/blogtopics" class="dropbtn">Blog Topics</a>
+        <div class="dropdown-content">
+    	    <a href="#">Computer Science</a>
+    	    <a href="#">Data Science</a>
+    	    <a href="#">Other</a>
+        </div>
+    </li>
+    <li><a href="/resources">Resources</a></li>
+{% endblock %}
+
+
+{% block content %}
+  <div id="content">
+     			<div class="padding">
+     			<p style="padding-top: 50px"> 
+     			<div class="post_list">
+     		{% for post in posts %}	
+     			<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+        		<p>{{ post.published_date }}</p>
+     		{% endfor %}
+     			</div>
+     			</div>
+     		</div>
+{% endblock %}
