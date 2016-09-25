@@ -12,7 +12,7 @@
    <div id="content">
      	<div class="padding">
         <p style="padding-top: 75px"></p>
-        <a class="btn btn-default" href="{% url 'post_edit' slug=ptpost.slug %}">
+        <a class="btn btn-default" href="{% url 'post_edit' slug=ptpost.slug category=ptpost.category %}">
         <span class="glyphicon glyphicon-pencil"></span></a>
         <h3>{{ ptpost.title }}</h3>
         {{ ptpost.published_date }}

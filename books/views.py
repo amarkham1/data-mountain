@@ -9,8 +9,8 @@ def home(request):
 	posts = Post.objects.order_by('published_date')
 	return render(request, 'blog/home.html', {'posts': posts})
 	
-def pt_detail(request, slug):
-	ptpost = get_object_or_404(Post, slug=slug)
+def pt_detail(request, slug, category):
+	ptpost = get_object_or_404(Post, slug=slug, category=category)
 	return render(request, 'blog/pt_detail.html', {'ptpost': ptpost})
 	
 def progresstracker(request):
@@ -25,7 +25,7 @@ def resources(request):
 	posts = Post.objects.order_by('published_date')
 	return render(request, 'blog/resources.html', {'posts': posts})
 	
-def progresstracker_new(request):
+def post_new(request):
 	if request.method == "POST":
 	    form = PostForm(request.POST)
 	    if form.is_valid():
@@ -33,13 +33,13 @@ def progresstracker_new(request):
 			ptpost.author = request.user
 			ptpost.published_date = timezone.now()
 			ptpost.save()
-			return redirect('pt_detail', slug=ptpost.slug)
+			return redirect('pt_detail', slug=ptpost.slug, category=ptpost.category)
 	else:
 		form = PostForm()
 	return render(request, 'blog/post_edit.html', {'form': form})
 	
-def post_edit(request, slug):
-	ptpost = get_object_or_404(Post, slug=slug)
+def post_edit(request, slug, category):
+	ptpost = get_object_or_404(Post, slug=slug, category=category)
 	if request.method == "POST":
 	    form = PostForm(request.POST, instance=ptpost)
 	    if form.is_valid():
@@ -47,7 +47,7 @@ def post_edit(request, slug):
 	    	ptpost.author = request.user
 	    	ptpost.published_date = timezone.now()
 	    	ptpost.save()
-	    	return redirect('pt_detail', slug=ptpost.slug)
+	    	return redirect('pt_detail', slug=ptpost.slug, category=ptpost.category)
 	
 	else:
 		form = PostForm(instance=ptpost)

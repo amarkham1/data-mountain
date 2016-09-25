@@ -22,7 +22,7 @@ class Post(models.Model):
 		return '%s' % self.title
 		
 	def get_absolute_url(self):
-		return "/%s/%s/" % (self.category.slug, self.slug)
+		return "/%s/%s/" % (self.category, self.slug)
 		
     
 class Category(models.Model):
@@ -30,7 +30,7 @@ class Category(models.Model):
 	slug = models.SlugField(max_length=100, db_index=True)
 	
 	def __unicode__(self):
-		return '%s' % self.title
+		return '%s' % self.slug
 		  
     
 # Create your models here.

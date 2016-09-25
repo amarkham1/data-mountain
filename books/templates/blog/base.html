@@ -17,14 +17,15 @@
     });
     </script>
     
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 <link href="//fonts.googleapis.com/css?family=Raleway&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
 	
 	<body>
 	<div id="header-container">
-	<a href="{% url 'progresstracker_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	<a href="{% url 'post_new' %}" class="header"><span class="glyphicon glyphicon-plus"></span></a>
      	<div id="page-container">	
      		<div id="header">
      		<h1>DATA MOUNTAIN</h1>
@@ -33,7 +34,7 @@
      	</div>
      </div>
 	
-	<div id="main-nav">
+	<div class="main-nav">
      			<ul>
      				{% block nav %}
      			
@@ -63,7 +64,7 @@ $(document).ready(function() {
 	
 	//Calculate the height of <header>
 	//Use outerHeight() instead of height() if have padding
-    var aboveHeight = $('header').outerHeight();
+    var aboveHeight = 268;
 	
 	// when scroll
     $(window).scroll(function(){
@@ -73,11 +74,11 @@ $(document).ready(function() {
 			
 			// if yes, add "fixed" class to the <nav>
 			// add padding top to the #content (value is same as the height of the nav)
-            $('#main-nav').addClass('fixed').css('top','0').next().css('padding-top','45px');
+            $('.main-nav').addClass('fixed').css('top','0').next().css('padding-top','45px');
         } else {
 			
 			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
-            $('#main-nav').removeClass('fixed').next().css('padding-top','0');
+            $('.main-nav').removeClass('fixed').next().css('padding-top','0');
         }
     });
 });
