@@ -15,6 +15,11 @@
     tinymce.init({ 
         selector:'textarea' 
     });
+    
+    function saveContent() {
+        var ed = tinymce.activeEditor;
+        $('#hidContents').val(ed.getContent());
+    }
     </script>
     
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -28,8 +33,8 @@
 	<a href="{% url 'post_new' %}" class="header"><span class="glyphicon glyphicon-plus"></span></a>
      	<div id="page-container">	
      		<div id="header">
-     		<h1>DATA MOUNTAIN</h1>
-     		<h3 style="margin-top: 0px;">An Autodidact's Journey Through Data Science</h3>
+     		<h1>Data Mountain</h1>
+     		<h4 style="margin-top: 0px;">An Autodidact's Journey Through Data Science</h4>
      		</div>
      	</div>
      </div>
@@ -74,7 +79,7 @@ $(document).ready(function() {
 			
 			// if yes, add "fixed" class to the <nav>
 			// add padding top to the #content (value is same as the height of the nav)
-            $('.main-nav').addClass('fixed').css('top','0').next().css('padding-top','45px');
+            $('.main-nav').addClass('fixed').css('top','0').next().css('padding-top','51px');
         } else {
 			
 			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top

@@ -4,13 +4,14 @@ import datetime
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect, render, get_object_or_404
+from django.core.urlresolvers import reverse
 	
 def home(request):
 	posts = Post.objects.order_by('published_date')
 	return render(request, 'blog/home.html', {'posts': posts})
 	
 def pt_detail(request, slug, category):
-	ptpost = get_object_or_404(Post, slug=slug, category=category)
+	ptpost = get_object_or_404(Post, slug=slug, category__slug=category)
 	return render(request, 'blog/pt_detail.html', {'ptpost': ptpost})
 	
 def progresstracker(request):
@@ -39,7 +40,7 @@ def post_new(request):
 	return render(request, 'blog/post_edit.html', {'form': form})
 	
 def post_edit(request, slug, category):
-	ptpost = get_object_or_404(Post, slug=slug, category=category)
+	ptpost = get_object_or_404(Post, slug=slug, category__slug=category)
 	if request.method == "POST":
 	    form = PostForm(request.POST, instance=ptpost)
 	    if form.is_valid():

@@ -1,16 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC);
+
 #page-container {
 	width: 838px;
 	margin: auto;
 	word-wrap: break-word;
 }
 
+@font-face {
+	font-family: 'Monopoly';
+	src: url('../fonts/MONOPOLY_LIGHT.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Monopoly';
+	src: url('../fonts/MONOPOLY_BOLD.ttf') format('truetype');
+	font-weight: bold;
+}
 
 
 body {
     font-family: 'Monopoly', Arial, Helvetica, Verdana, Sans-serif;
-    src: url('../fonts/MONOPOLY_INLINE.ttf');
-    src: url('../fonts/MONOPOLY_INLINE.ttf');
-    font-size: 16px;
+    font-size: 20px;
     color: #666666;
     background: #FFFFFF;
 }
@@ -21,11 +31,11 @@ body {
 
 .main-nav {
 	background-color: #E2E2E2;
-	height: 45px;
+	height: 51px;
 	float: left;
 	width: 100%;
 	position: relative;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .main-nav ul{
@@ -80,6 +90,7 @@ dropbtn.active {
 
 .dropdown-content a:hover {
     background-color: #f1f1f1
+    
 }
 
 .dropdown:hover .dropdown-content {
@@ -98,6 +109,7 @@ ul li a{
 
 .main-nav ul li a:hover, .dropdown:hover .dropbtn{
 	background-color: #BFBFBF;
+	text-decoration: none;
 }
 
 #active, #active:hover {
@@ -107,6 +119,7 @@ ul li a{
 }
 
 #header {
+	font-family: 'IM Fell DW Pica SC';
 	background-image: url(../css/images/mountain.png);
 	background-position: center center;
 	height: 268px;
@@ -149,6 +162,10 @@ h1 {
 
 #content {
     line-height: 200%;
+}
+
+#content a {
+	text-decoration: none;
 }
 
 #content h2 {
