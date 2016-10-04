@@ -16,6 +16,6 @@
         <span class="glyphicon glyphicon-pencil"></span></a>
         <h3>{{ ptpost.title }}</h3>
         {{ ptpost.published_date }}
-        <p>{{ ptpost.body|linebreaksbr }}</p>
+        <p>{{ ptpost.body|safe }}</p>
     </div>
 {% endblock %}

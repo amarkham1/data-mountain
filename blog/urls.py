@@ -17,14 +17,21 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from books import views
 admin.autodiscover()
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    #url(r'^media/(?P<path>/*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+    #url(r'^tinymce/', include('tinymce.urls')),
     url(r'^home/$', views.home, name='home'),
+    url(r'^blogtopics/computer-science/$', views.compsci, name='compsci'),
+    url(r'^blogtopics/data-science/$', views.datasci, name='datasci'),
+    url(r'^blogtopics/other/$', views.other, name='other'),
     url(r'^blogtopics/$', views.blogtopics, name='blogtopics'),
     url(r'^resources/$', views.resources, name='resources'),
     url(r'^new/$', views.post_new, name='post_new'),
     url(r'^progresstracker/$', views.progresstracker, name='progresstracker'),
+    #url(r'^blogtopics/(?P<category>[\w-]+)/(?P<slug>[\w-]+)/$', views.bt_detail, name='bt_detail'),
     url(r'^(?P<category>[\w-]+)/(?P<slug>[\w-]+)/$', views.pt_detail, name='pt_detail'),
     url(r'^(?P<category>[\w-]+)/(?P<slug>[\w-]+)/edit/$', views.post_edit, name='post_edit'),
 ]

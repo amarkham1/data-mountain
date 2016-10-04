@@ -1,13 +1,30 @@
 {% extends 'blog/base.html' %}
 
+{% block nav %}
+	<li><a href="/home">Home</a></li>
+	<li><a href="/progresstracker">Progress Tracker</a></li>
+    <li class="dropdown">
+        <a href="/blogtopics" class="dropbtn">Blog Topics</a>
+        <div class="dropdown-content">
+    	    <a href="/blogtopics/computer-science">Computer Science</a>
+    	    <a href="/blogtopics/data-science">Data Science</a>
+    	    <a href="/blogtopics/other">Other</a>
+        </div>
+    </li>
+    <li><a href="/resources">Resources</a></li>
+{% endblock %}
+
+
 {% block content %}
 <div id="content">
     <div class="padding">
 		<h1>New post</h1>
-		<form method="POST" class="progresstracker-form">{% csrf_token %}
-	    	{{ form.as_p }}
-	    	<button type="submit" class="save btn btn-default">Save</button>
+		    <form method="POST" class="progresstracker-form">{% csrf_token %}
+		    {{ form.as_p }}
+		    <button type="submit" class="save btn btn-default">Save</button>
+
 		</form>
+
 	</div>
 </div>
 {% endblock %}

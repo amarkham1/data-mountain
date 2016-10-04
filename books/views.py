@@ -7,23 +7,38 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.core.urlresolvers import reverse
 	
 def home(request):
-	posts = Post.objects.order_by('published_date')
+	posts = Post.objects.order_by('-published_date')
 	return render(request, 'blog/home.html', {'posts': posts})
 	
 def pt_detail(request, slug, category):
 	ptpost = get_object_or_404(Post, slug=slug, category__slug=category)
-	return render(request, 'blog/pt_detail.html', {'ptpost': ptpost})
+	if ptpost.category == "progresstracker":
+		return render(request, 'blog/pt_detail.html', {'ptpost': ptpost})
+	else:
+		return render(request, 'blog/computerscience.html', {'ptpost': ptpost})
+
+def compsci(request):
+	posts = Post.objects.filter(category__slug='computer-science').order_by('-published_date')
+	return render(request, 'blog/computerscience.html', {'posts': posts})
+	
+def datasci(request):
+	posts = Post.objects.filter(category__slug='data-science').order_by('-published_date')
+	return render(request, 'blog/datascience.html', {'posts': posts})
+
+def other(request):
+	posts = Post.objects.filter(category__slug='other').order_by('-published_date')
+	return render(request, 'blog/other.html', {'posts': posts})
 	
 def progresstracker(request):
-	posts = Post.objects.order_by('published_date')
+	posts = Post.objects.filter(category__slug='progresstracker').order_by('-published_date')
 	return render(request, 'blog/progresstracker.html', {'posts': posts})
 	
 def blogtopics(request):
-	posts = Post.objects.order_by('published_date')
+	posts = Post.objects.order_by('-published_date')
 	return render(request, 'blog/blogtopics.html', {'posts': posts})
 	
 def resources(request):
-	posts = Post.objects.order_by('published_date')
+	posts = Post.objects.order_by('-published_date')
 	return render(request, 'blog/resources.html', {'posts': posts})
 	
 def post_new(request):
