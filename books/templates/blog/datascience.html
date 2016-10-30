@@ -16,15 +16,18 @@
 
 
 {% block content %}
-  <div id="content">
-     			<div class="padding">
-     			<p style="padding-top: 50px"> 
-     			<div class="post_list">
-     		{% for post in posts %}	
-     			<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-        		<p>{{ post.published_date }}</p>
-     		{% endfor %}
-     			</div>
-     			</div>
+	<div id="content">
+     	<div class="padding">
+     	<p style="padding-top: 50px"> 
+     		<div class="post_list">
+     			{% for post in posts %}	
+     			<h3>{{ post.title }}</a></h3>
+        		<p style="font-size: 16px">{{ post.published_date|date:'M d, Y' }}</p>
+     		    {{ post.body|truncatewords:45 |safe }}
+        		<a href="{{ post.get_absolute_url_bt }}">See More</a>
+     		    <hr></hr>
+     		    {% endfor %}
      		</div>
+     	</div>	
+     </div>
 {% endblock %}

@@ -1,0 +1,5 @@
+*.pyc
+blogdb
+myvenv
+__pycache__
+local_settings.py

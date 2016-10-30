@@ -8,7 +8,7 @@ class Post(models.Model):
 	slug = models.SlugField(max_length=100, unique=True)
 	body = models.TextField()
 	posted = models.DateField(db_index=True, auto_now_add=True)
-	category = models.ForeignKey('books.Category')
+	category = models.ForeignKey('books.Category', related_name='%(class)s_slug')
 	created_date = models.DateTimeField(
             default = timezone.now)
 	published_date = models.DateTimeField(
@@ -24,13 +24,14 @@ class Post(models.Model):
 	def get_absolute_url(self):
 		return "/%s/%s/" % (self.category, self.slug)
 		
+	def get_absolute_url_bt(self):
+	    return "/blogtopics/%s/%s/" % (self.category, self.slug)
+		
     
 class Category(models.Model):
 	title = models.CharField(max_length=100, db_index=True)
 	slug = models.SlugField(max_length=100, db_index=True)
 	
 	def __unicode__(self):
-		return '%s' % self.slug
-		  
-    
-# Create your models here.
+		return '%s' % (self.slug)
+

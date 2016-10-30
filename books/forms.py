@@ -1,6 +1,6 @@
 from django import forms
 from .models import Post
-from tinymce.widgets import TinyMCE
+
 
 class PostForm(forms.ModelForm):
 
@@ -8,5 +8,3 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'body', 'category', 'slug')
 		
-    class Media:
-        js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.min.js',)		

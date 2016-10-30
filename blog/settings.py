@@ -21,12 +21,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w)a15191nu=d&d!@#uuq_zs7dpq^93a@8@+e#7&^ppfmya(&ij'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+ALLOWED_HOSTS = ['*']
 
 SITE_ID=1
 
@@ -57,6 +62,8 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'blog.urls'
 
+LOGIN_REDIRECT_URL = '/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,6 +81,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CATEGORY_TEMPLATES = {
+    'progresstracker': 'blog/pt_detail.html',
+    'computer-science': 'blog/computerscience-detail.html',
+    'data-science': 'blog/datascience-detail.html',
+    'other': 'blog/other-detail.html',
+}
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
