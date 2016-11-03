@@ -26,6 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #from local_settings.py import *
 SECRET_KEY = os.environ['SECRET_KEY']
 
+DISABLE_COLLECTSTATIC=1
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
