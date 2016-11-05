@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #from local_settings.py import *
-SECRET_KEY = os.environ['SECRET_KEY']
+with open('/Users/amarkham/data-mountain/books/secret_key.txt') as f:
+	SECRET_KEY = f.read().strip()
 
 DISABLE_COLLECTSTATIC=1
 
@@ -64,6 +65,11 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+X_FRAME_OPTIONS = 'DENY'
+CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = True
+
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -139,7 +145,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -157,5 +166,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT='statoc/'
+STATIC_ROOT='static/'
 STATIC_URL = '/static/'
