@@ -44,4 +44,3 @@ urlpatterns = [
     url(r'^blogtopics/(?P<category>[\w-]+)/(?P<slug>[\w-]+)/publish/$', views.post_publish, name='bt_post_publish'),
     url(r'^(?P<category>[\w-]+)/(?P<slug>[\w-]+)/publish/$', views.post_publish, name='pt_post_publish'),
 ]
-+ static(settings.STATIC_URL, document_root=setting.STATIC_ROOT)
