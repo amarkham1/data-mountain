@@ -24,13 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #from local_settings.py import *
-with open(os.path.splitext(os.path.basename("secret_key.txt") as f:
-	SECRET_KEY = f.read().strip()
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DISABLE_COLLECTSTATIC=1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 try:
     from .local_settings import *
@@ -38,6 +37,8 @@ except ImportError:
     pass
 
 ALLOWED_HOSTS = ['*']
+
+TEMPLATE_DEBUG = DEBUG
 
 SITE_ID=1
 
@@ -70,6 +71,12 @@ X_FRAME_OPTIONS = 'DENY'
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 
+import socket
+
+if socket.gethostname() == 'my-laptop':
+    DEBUG = TEMPLATE_DEBUG = True
+else:
+    DEBUG = TEMPLATE_DEBUG = False
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -110,6 +117,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogdb',
+        'USER': ''
+        'PASSWORD': ''
+        'PORT': ''
     }
 }
 
