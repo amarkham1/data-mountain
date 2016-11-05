@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #from local_settings.py import *
-with open('/Users/amarkham/data-mountain/books/secret_key.txt') as f:
+with open(os.path.splitext(os.path.basename("secret_key.txt") as f:
 	SECRET_KEY = f.read().strip()
 
 DISABLE_COLLECTSTATIC=1
