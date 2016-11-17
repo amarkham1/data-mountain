@@ -8,6 +8,10 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 """
 
 import os
+import sys
+
+sys.stdout = sys.stderr
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 
 from django.core.wsgi import get_wsgi_application
@@ -15,7 +19,4 @@ from whitenoise.django import DjangoWhiteNoise
 from dj_static import Cling
 
 application = Cling(get_wsgi_application())
-application = DjangoWhiteNoise(application)
-
-from whitenoise.django import DjangoWhiteNoise
 application = DjangoWhiteNoise(application)
