@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'books',
     'tinymce',
+    'gunicorn',
     ]
 
 MIDDLEWARE_CLASSES = [
