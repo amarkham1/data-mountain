@@ -11,6 +11,7 @@ import os
 import sys
 
 sys.stdout = sys.stderr
+import django.core.wsgi
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
