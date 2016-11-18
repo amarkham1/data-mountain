@@ -119,6 +119,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogdb',
         'USER': '',
+        'PASSWORD': 'postgres',
         'PORT': '',
     }
 }
