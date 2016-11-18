@@ -16,8 +16,8 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 
-from whitenoise.django import DjangoWhiteNoise
-from dj_static import Cling
 
+from dj_static import Cling
 application = Cling(get_wsgi_application())
+from whitenoise.django import DjangoWhiteNoise
 application = DjangoWhiteNoise(application)
