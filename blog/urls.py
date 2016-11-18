@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^account/logout$', django.contrib.auth.views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^home/$', views.home, name='home'),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^$', views.home, name='home'),
     url(r'^blogtopics/computer-science/$', views.compsci, name='computer-science'),
     url(r'^blogtopics/data-science/$', views.datasci, name='data-science'),
