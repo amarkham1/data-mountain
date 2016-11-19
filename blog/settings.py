@@ -32,7 +32,7 @@ DISABLE_COLLECTSTATIC=1
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['datamountain.herokuapp.com']
 
 TEMPLATE_DEBUG = DEBUG
 
