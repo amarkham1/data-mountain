@@ -15,6 +15,7 @@ DATABASES = {
         'PASSWORD': 'Amarkham1',
         'HOST': 'localhost',
         'PORT': '',
+        'URL': 'postgres://qasklxdnlmkspx:Dy_gZDngXF-VPrsED5GtLuS0GR@ec2-174-129-29-118.compute-1.amazonaws.com:5432/d59j1aiuq7laep',
     }
 }
 
