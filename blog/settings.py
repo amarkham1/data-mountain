@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DISABLE_COLLECTSTATIC=1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 try:
     from .local_settings import *
