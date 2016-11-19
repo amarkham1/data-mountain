@@ -29,14 +29,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DISABLE_COLLECTSTATIC=1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -119,7 +115,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogdb',
         'USER': '',
-        'PASSWORD': 'postgres',
+        'PASSWORD': '',
         'PORT': '',
     }
 }
@@ -188,3 +184,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
