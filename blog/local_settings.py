@@ -1,7 +1,7 @@
 from settings import *
 import os
 
-DEBUG = TEMPLATE_DEBUG = False
+DEBUG = TEMPLATE_DEBUG = True
 
 SECRET_KEY='1c3-cr3am-b4by'
 ALLOWED_HOSTS = ['*']
