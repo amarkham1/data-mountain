@@ -13,7 +13,7 @@ DATABASES = {
         'NAME': 'blogdb',
         'USER': 'amarkham',
         'PASSWORD': 'Amarkham1',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }

@@ -116,6 +116,7 @@ DATABASES = {
         'NAME': 'blogdb',
         'USER': '',
         'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
