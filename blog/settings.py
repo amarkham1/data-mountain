@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
+import dj_database_url
 DATABASES = {
     'default': dj_database_url.config()
        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
