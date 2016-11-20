@@ -1,5 +1,6 @@
 from settings import *
 import os
+import dj_database_url
 
 DEBUG = TEMPLATE_DEBUG = True
 
@@ -8,7 +9,7 @@ ALLOWED_HOSTS = ['*']
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DATABASES = {
-    'default': {
+    'default': dj_database_url.config() {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogdb',
         'USER': 'amarkham',
