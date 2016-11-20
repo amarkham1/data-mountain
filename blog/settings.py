@@ -111,14 +111,13 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogdb',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': dj_database_url.config()
+       # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'blogdb',
+        #'USER': '',
+        #'PASSWORD': '',
+        #'HOST': 'localhost',
+        #'PORT': '',
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
