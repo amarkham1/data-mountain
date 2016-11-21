@@ -155,7 +155,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = False # set to False when in development
+SECURE_SSL_REDIRECT = True # set to False when in development
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = True
 # Internationalization
