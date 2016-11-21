@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
+    'default': dj_database_url.config(default='postgres://amarkham:Amarkham1@localhost:5432/blogdb')
 }
 
 
@@ -27,3 +27,5 @@ DATABASES = {
    # }
 #}
 
+
+DATABASES['default'] =  dj_database_url.config(default='postgres://foo:bar@somehost.amazonaws.com:5432/somedb')
