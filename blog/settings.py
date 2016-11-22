@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(os.environ["HEROKU_POSTGRESQL_BROWN_URL")
+    'default': dj_database_url.config(os.environ["HEROKU_POSTGRESQL_BROWN_URL"])
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
