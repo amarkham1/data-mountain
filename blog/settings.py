@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ["DATABASE_URL"])
+    'default': dj_database_url.config(default=os.getenv["DATABASE_URL"])
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
