@@ -111,14 +111,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogdb',
-        'USER': 'amarkham',
-        'PASSWORD': 'Amarkham1',
-        'HOST': 'localhost',
-        'PORT': '',
-        }
+    'default': dj_database_url.config()
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -156,6 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT = True # set to False when in development
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = True
 # Internationalization

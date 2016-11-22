@@ -15,17 +15,17 @@ DATABASES = {
 
 
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
-   #     'NAME': 'blogdb',
-    #    'USER': 'amarkham',
-     #   'PASSWORD': 'Amarkham1',
-      #  'HOST': 'localhost',
-       # 'PORT': '',
-        #'URL': 'postgres://qasklxdnlmkspx:Dy_gZDngXF-VPrsED5GtLuS0GR@ec2-174-129-29-118.compute-1.amazonaws.com:5432/d59j1aiuq7laep',
-   # }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'amarkham',
+        'PASSWORD': 'Amarkham1',
+        'HOST': 'localhost',
+        'PORT': '',
+        'URL': 'postgres://qasklxdnlmkspx:Dy_gZDngXF-VPrsED5GtLuS0GR@ec2-174-129-29-118.compute-1.amazonaws.com:5432/d59j1aiuq7laep',
+    }
+}
 
 
-DATABASES['default'] =  dj_database_url.config(default='postgres://foo:bar@somehost.amazonaws.com:5432/somedb')
+#DATABASES['default'] =  dj_database_url.config(default='postgres://foo:bar@somehost.amazonaws.com:5432/somedb')
