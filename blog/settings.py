@@ -110,9 +110,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ["DATABASE_URL"])
-}
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+#DATABASES = {
+ #   'default': dj_database_url.config(default=os.environ["DATABASE_URL"])
+#}
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
