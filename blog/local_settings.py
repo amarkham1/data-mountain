@@ -15,16 +15,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   #     'NAME': 'blogdb',
+    #    'USER': 'amarkham',
+     #   'PASSWORD': 'Amarkham1',
+      #  'HOST': 'localhost',
+       # 'PORT': '5432',
+   # }
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogdb',
-        'USER': 'amarkham',
-        'PASSWORD': 'Amarkham1',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
 }
-
-
-#DATABASES['default'] =  dj_database_url.config(default='postgres://foo:bar@somehost.amazonaws.com:5432/somedb')
