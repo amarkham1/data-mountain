@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+    'default': dj_database_url.config()
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
