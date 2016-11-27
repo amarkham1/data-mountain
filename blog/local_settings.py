@@ -6,7 +6,7 @@ DEBUG = TEMPLATE_DEBUG = False
 
 
 SECRET_KEY='1c3-cr3am-b4by'
-ALLOWED_HOSTS = ['www.datamountain.ca']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
