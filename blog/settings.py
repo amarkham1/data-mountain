@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DISABLE_COLLECTSTATIC=1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (

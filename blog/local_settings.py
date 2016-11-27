@@ -2,7 +2,7 @@ from settings import *
 import os
 import dj_database_url
 
-DEBUG = TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = False
 
 SECRET_KEY='1c3-cr3am-b4by'
 ALLOWED_HOSTS = ['*']
@@ -15,17 +15,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
-   #     'NAME': 'blogdb',
-    #    'USER': 'amarkham',
-     #   'PASSWORD': 'Amarkham1',
-      #  'HOST': 'localhost',
-       # 'PORT': '5432',
-   # }
-#}
-
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'amarkham',
+        'PASSWORD': 'Amarkham1',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
+
