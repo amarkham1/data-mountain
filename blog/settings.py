@@ -32,7 +32,7 @@ DISABLE_COLLECTSTATIC=1
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.datamountain.ca']
 
 TEMPLATE_DEBUG = DEBUG
 
