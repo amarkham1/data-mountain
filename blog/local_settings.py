@@ -2,7 +2,7 @@ from settings import *
 import os
 import dj_database_url
 
-DEBUG = TEMPLATE_DEBUG = False
+DEBUG = TEMPLATE_DEBUG = True
 
 SECRET_KEY='1c3-cr3am-b4by'
 ALLOWED_HOSTS = ['www.datamountain.ca']
