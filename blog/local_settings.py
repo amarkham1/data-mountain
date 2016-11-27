@@ -13,7 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #    'default': dj_database_url.config(default='postgres://amarkham:Amarkham1@localhost:5432/blogdb')
 #}
 
-
+ADMINS = (
+    ('Andrew', 'andrewjmarkham1@gmail.com'),
+)
 
 DATABASES = {
     'default': {
