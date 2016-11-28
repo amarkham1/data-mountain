@@ -19,7 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #ADMINS = (
  #   ('Andrew', 'andrewjmarkham1@gmail.com'),
 #)
-
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+}
 #DATABASES = {
  #   'default': {
   #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
