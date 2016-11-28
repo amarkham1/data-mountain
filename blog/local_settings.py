@@ -19,14 +19,14 @@ ADMINS = (
     ('Andrew', 'andrewjmarkham1@gmail.com'),
 )
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogdb',
-        'USER': 'amarkham',
-        'PASSWORD': 'Amarkham1',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   #     'NAME': 'blogdb',
+    #    'USER': 'amarkham',
+     #   'PASSWORD': 'Amarkham1',
+      #  'HOST': 'localhost',
+       # 'PORT': '5432',
+    #}
+#}
 
