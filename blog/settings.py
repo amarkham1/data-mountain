@@ -105,8 +105,6 @@ CATEGORY_TEMPLATES = {
 WSGI_APPLICATION = 'blog.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 import dj_database_url
 
 DATABASES = {
@@ -116,19 +114,6 @@ DATABASES = {
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
 )
-#MEDIA_URL = '/media/'
-#STATIC_URL = '/static/'
-
-#TINYMCE_JS_URL = os.path.join(MEDIA_URL, "tinymce/js/tinymce/tinymce.min.js")
-#TINYMCE_SPELLCHECKER = True
-#TINYMCE_DEFAULT_CONFIG = {
-   # 'plugins': "table, spellchecker, paste, searchreplace",
-   # 'theme': "advanced",
-   # 'relative_urls': False,
-#}
-
-# Password validation
-# https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
