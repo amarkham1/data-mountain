@@ -66,12 +66,12 @@ X_FRAME_OPTIONS = 'DENY'
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 
-import socket
+#import socket
 
-if socket.gethostname() == 'my-laptop':
-    DEBUG = TEMPLATE_DEBUG = True
-else:
-    DEBUG = TEMPLATE_DEBUG = False
+#if socket.gethostname() == 'my-laptop':
+#    DEBUG = TEMPLATE_DEBUG = True
+#else:
+ #   DEBUG = TEMPLATE_DEBUG = False
 
 ROOT_URLCONF = 'blog.urls'
 
