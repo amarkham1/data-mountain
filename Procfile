@@ -1,1 +1,1 @@
-web: gunicorn blog.wsgi:application
+web: DEBUG=true gunicorn blog.wsgi:application --preload --log-level debug --log-file -
