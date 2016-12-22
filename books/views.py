@@ -23,7 +23,6 @@ def bt_detail(request, slug, category):
 	return render(request, template, {'post': post})
 
 def resources(request):
-	#post = Post.objects.filter(category__slug='resources')
 	post = get_object_or_404(Post, slug='resources')
 	return render(request, 'blog/resources.html', {'post': post})
 
@@ -78,14 +77,13 @@ def post_new(request):
 	    if form.is_valid():
 			post = form.save(commit=False)
 			post.author = request.user
-			#post.published_date = timezone.now()
 			post.save()
             if post.category == 'progresstracker':
-                return redirect('books.views.pt_detail', slug=post.slug, category=post.category)
+                return redirect('pt_detail', slug=post.slug, category=post.category)
             elif post.category == 'resources':
-                return redirect('books.views.resources')
+                return redirect('resources')
             else:
-                return redirect('books.views.bt_detail', slug=post.slug, category=post.category)
+                return redirect('bt_detail', slug=post.slug, category=post.category)
     else:
 		form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -98,14 +96,13 @@ def post_edit(request, slug, category):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            #post.published_date = timezone.now()
             post.save()
             if post.category == 'progresstracker':
-                return redirect('books.views.pt_detail', slug=post.slug, category=post.category)
+                return redirect('pt_detail', slug=post.slug, category=post.category)
             elif post.category == 'resources':
-                return redirect('books.views.resources')
+                return redirect('resources')
             else:
-                return redirect('books.views.bt_detail', slug=post.slug, category=post.category)
+                return redirect('bt_detail', slug=post.slug, category=post.category)
            
     else:
 		form = PostForm(instance=post)
@@ -119,9 +116,8 @@ def resources_post_edit(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            #post.published_date = timezone.now()
             post.save()
-            return redirect('books.views.resources')
+            return redirect('resources')
     else:
 		form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
