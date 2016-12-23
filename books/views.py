@@ -83,6 +83,8 @@ def post_new(request):
                 return redirect('resources')
             else:
                 return redirect('bt_detail', slug=post.slug, category=post.category)
+        else:
+            print form.errors
     else:
 		form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
