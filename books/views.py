@@ -72,8 +72,8 @@ def blogtopics(request):
 @login_required	
 def post_new(request):
     if request.method == "POST":
-	    form = PostForm(request.POST)
-	    if form.is_valid():
+        form = PostForm(request.POST)
+        if form.is_valid():
 			post = form.save(commit=False)
 			post.author = request.user
 			post.save()
