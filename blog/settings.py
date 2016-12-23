@@ -27,10 +27,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.datamountain.ca']
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -126,8 +126,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+if DEBUG = True:
+    SECURE_SSL_REDIRECT = False
+elif DEBUG = False:
+    SECURE_SSL_REDIRECT = True
+
+
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = True # set to False when in development
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = True
