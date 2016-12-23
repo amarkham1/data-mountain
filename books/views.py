@@ -71,7 +71,7 @@ def blogtopics(request):
 	return render(request, 'blog/blogtopics.html', {'posts': posts})
 	
 @login_required	
-def post_new(request, slug, category):
+def post_new(request):
     if request.method == "POST":
 	    form = PostForm(request.POST)
 	    if form.is_valid():
