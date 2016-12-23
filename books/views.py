@@ -74,9 +74,9 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-			post = form.save(commit=False)
-			post.author = request.user
-			post.save()
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
             if post.category == 'progresstracker':
                 return redirect('pt_detail', slug=post.slug, category=post.category)
             elif post.category == 'resources':
