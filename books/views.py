@@ -13,7 +13,6 @@ def home(request):
 	
 def pt_detail(request, slug, category):
     post = get_object_or_404(Post, slug=slug, category__slug=category)
-	#posts = Post.objects.filter(category__slug=category)
     template = CATEGORY_TEMPLATES.get(post.category.slug)
     return render(request, template, {'post': post})
 
