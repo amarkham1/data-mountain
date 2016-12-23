@@ -126,9 +126,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-if DEBUG = True:
+if DEBUG == True:
     SECURE_SSL_REDIRECT = False
-elif DEBUG = False:
+elif DEBUG == False:
     SECURE_SSL_REDIRECT = True
 
 
